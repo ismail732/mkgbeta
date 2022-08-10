@@ -238,16 +238,16 @@
                     </select>
                   </div>
                 </div>
-                
+
                 <div class="col-md-4 col-12">
                   <div class="mb-1">
                     <!-- <label class="form-label" for="country-floating">Binding</label> -->
 
                     <select class="select2 form-select" id="select2-Subject" name="binding_id">
                       <option>Enter Bindings</option>
-                      <option value="binding_id">Soft Binding</option>
-                      <option value="binding_id">Hard Binding</option>
-                      <option value="binding_id">Spring Binding</option>
+                      <option value="1">Soft Binding</option>
+                      <option value="2">Hard Binding</option>
+                      <option value="3">Spring Binding</option>
                     </select>
                   </div>
                 </div>
@@ -776,6 +776,41 @@ $(document).ready(function(){
            })
        });
    });
+
+   
+   //jquery form validation
+$(function () {
+    'use strict';
+    var jqForm = $('#add_book');
+    // jQuery Validation
+    // --------------------------------------------------------------------
+    if (jqForm.length) {
+        jqForm.validate({
+            rules: {
+            
+            'name': {
+                required: true
+            },
+            'name_urdu': {
+                required: true
+            },
+            'l_comission': {
+              required: true,
+              number: true
+            },
+            },
+
+            invalidHandler: function(event, validator) {
+              toastr['error']('👋 Validation Error', 'Error!', {
+                    closeButton: true,
+                    tapToDismiss: false,
+                });
+            }
+
+        });
+    }
+
+});
 </script>
 
   <!-- vendor files -->

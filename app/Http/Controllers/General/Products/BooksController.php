@@ -120,12 +120,11 @@ class BooksController extends Controller
             'series_id'             =>$request->series_id,
             'binding_id'            =>$request->binding_id,
             'additional_topics'     =>$request->additional_topics,
-            'company_id'            => $user->company_id,
             'p_id' => $meta
 
   
          ]);
-         return redirect('books/show');
+         return redirect('books/show')->with('success', __('Book Added Succesfully'));
     }
     /**
      * Display the specified resource.

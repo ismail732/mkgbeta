@@ -39,7 +39,7 @@ return new class extends Migration
             $table->string('inside_box')->nullable();
 
             $table->float('l_sale_price',15,2)->default('0.00');
-            $table->float('l_comission',3,2)->default('0.00');
+            $table->float('l_comission',15,2)->default('0.00');
             $table->float('l_purchase_price',15,2)->default('0.00');
             $table->integer('retail_discount_policy')->nullable();
             $table->integer('whole_sale_discount_policy')->nullable();

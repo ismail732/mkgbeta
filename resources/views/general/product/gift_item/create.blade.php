@@ -54,7 +54,7 @@
                       placeholder="Product Name*"
                       name="name"
                     />
-                    @error('name')
+                      @error('name')
                           <div class="danger text-danger">{{ $message }}</div>
                       @enderror
                   </div>

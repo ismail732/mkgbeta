@@ -10,7 +10,7 @@ use App\Models\Units;
 use App\Models\Publishers;
 use App\Models\Authors;
 use App\Models\Classes;
-use App\Models\languages;
+use App\Models\Languages;
 use App\Models\Series;
 use App\Models\Topics;
 use App\Models\Suppliers;
@@ -19,6 +19,7 @@ use App\Models\Categories;
 use App\Models\SubCategories;
 use App\Models\Bindings;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 use DataTables;
 
 
@@ -52,13 +53,14 @@ class BooksController extends Controller
         $user=Auth::user();
         $company_id = $user->company_id;
         $data=array();
-        $data['publisher']          = Publishers::where('company_id',$company_id)->get()->pluck('name', 'id');
+        $data['publishers']          = Publishers::where('company_id',$company_id)->get()->pluck('name', 'id');
         $data['authors']            = Authors::where('company_id',$company_id)->get()->pluck('name', 'id');
         $data['units']              = Units::get()->pluck('title', 'id');
         $data['topics']             = Topics::where('company_id',$company_id)->get()->pluck('name', 'id');
         $data['classes']            = Classes::get()->pluck('description', 'id');
-        $data['languages']          = languages::get()->pluck('name', 'id');
+        $data['languages']          = Languages::get()->pluck('name', 'id');
         $data['subjects']           = Subjects::where('company_id',$company_id)->get()->pluck('name', 'id');
+        $data['suppliers']           = Suppliers::where('company_id',$company_id)->get()->pluck('name', 'id');
         $data['bindings']           = Bindings::get()->pluck('name', 'id');
         $data['series']             = Series::where('company_id',$company_id)->get()->pluck('name', 'id');
         // $data['editions']       = edition::get()->pluck('name', 'id');
@@ -91,6 +93,8 @@ class BooksController extends Controller
             'description'           =>$request->description,
             'l_purchase_price'      =>$request->l_purchase_price,
             'l_comission'           =>$request->l_comission,
+            'supplier_id'           =>$request->supplier_id,
+            'publisher_id'          =>$request->publisher_id,
             'l_sale_price'          =>$request->l_sale_price,
             'weight'                =>$request->weight,
             'dimensions'            =>$request->dimensions,

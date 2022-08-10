@@ -157,15 +157,11 @@
 
                 <div class="col-md-4 col-12">
                   <div class="mb-1">
-                    <input list="Publisher" name="browser" placeholder="Publisher*" id="browser"   class="form-control @error('code') error @enderror">
-
-                      <datalist id="Publisher">
-                        <option value="Edge">
-                        <option value="Firefox">
-                        <option value="Chrome">
-                        <option value="Opera">
-                        <option value="Safari">
-                      </datalist>
+                    <select class="select2 form-select" id="select2-Unit" name="supplier_id">
+                      @foreach($suppliers as $x => $val)
+                        <option value="{{$x}}">{{$val}}</option>
+                      @endforeach  
+                    </select>
                   </div>
                 </div>
                 <div class="col-md-4 col-12">
@@ -209,6 +205,16 @@
                     </select>
                   </div>
                 </div>
+                <div class="col-md-4 col-12">
+                  <div class="mb-1">
+                    <!-- <label class="form-label" for="country-floating">Binding</label> -->
+                    <select class="select2 form-select" id="select2-Unit" name="publisher_id">
+                      @foreach($publishers as $x => $val)
+                        <option value="{{$x}}">{{$val}}</option>
+                      @endforeach  
+                    </select>
+                  </div>
+                </div>
 
 
 
@@ -232,13 +238,16 @@
                     </select>
                   </div>
                 </div>
-
+                
                 <div class="col-md-4 col-12">
                   <div class="mb-1">
                     <!-- <label class="form-label" for="country-floating">Binding</label> -->
 
-                    <select class="select2 form-select" id="select2-Subject">
-                      <option value="">Binding*</option>
+                    <select class="select2 form-select" id="select2-Subject" name="binding_id">
+                      <option>Enter Bindings</option>
+                      <option value="binding_id">Soft Binding</option>
+                      <option value="binding_id">Hard Binding</option>
+                      <option value="binding_id">Spring Binding</option>
                     </select>
                   </div>
                 </div>
@@ -724,13 +733,6 @@
   
 </form>
 
-
-
-
-
-
-
-
 <!-- Basic Floating Label Form section end -->
 @endsection
 
@@ -800,8 +802,6 @@ $(document).ready(function(){
 @endsection
 
 <!-- Product Image Modal -->
-
-
 
               <div
                 class="modal fade text-start"

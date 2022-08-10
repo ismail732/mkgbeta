@@ -23,9 +23,10 @@ class Products extends Model
     'weight',
     'dimensions',
     'keywords',
+    'supplier_id',
     'sub_category_id',
     'alternate_code',
-    'supplier_id',
+    'publisher_id',
     'company_id',
 
 

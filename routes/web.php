@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\General\UnitsController;
+use App\Http\Controllers\General\SuppliersController;
 use App\Http\Controllers\General\AuthorsController;
 use App\Http\Controllers\General\SeriesController;
 use App\Http\Controllers\General\PublishersController;
@@ -51,6 +52,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('home');
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('units', UnitsController::class);
+    Route::resource('suppliers', SuppliersController::class);
     Route::resource('authors', AuthorsController::class);
     Route::resource('series', SeriesController::class);
     Route::resource('publisher', PublishersController::class);

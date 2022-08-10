@@ -79,6 +79,11 @@
                     "slug": "",
                     "submenu": [
                         {
+                            "url": "suppliers",
+                            "name": "Supplier Info",
+                            "slug": "app-invoice-add"
+                        },
+                        {
                             "url": "authors",
                             "name": "Aurthor Info",
                             "slug": "app-invoice-add"

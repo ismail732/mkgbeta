@@ -94,14 +94,6 @@ class AuthorsController extends Controller
                 'message' => "Authors Added Succesfully",
             ];
             return response()->json($response);
-        $user=Auth::user();
-        $contract = Authors::create([
-            'name'              => $request->name,
-            'name_urdu'         => $request->name_urdu,
-            'description'       => $request->description,
-            'company_id'        => $user->company_id,
-           
-        ]);
 
         return redirect()->route('authors.index')
                         ->with('success','Authors created successfully.');

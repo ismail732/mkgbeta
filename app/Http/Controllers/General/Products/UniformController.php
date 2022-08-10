@@ -94,7 +94,6 @@ class UniformController extends Controller
             'size'                  =>$request->size,
             'color'                 =>$request->color,
             'additional_topics'     =>$request->additional_topics,
-            'company_id'            => $user->company_id,
             'p_id' => $meta
 
   

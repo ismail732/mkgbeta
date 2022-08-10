@@ -85,7 +85,6 @@ class StationariesController extends Controller
             'product_id'            =>3,
             'size'                  =>$request->size,
             'additional_topics'     =>$request->additional_topics,
-            'company_id'            => $user->company_id,
             'p_id' => $meta
 
   

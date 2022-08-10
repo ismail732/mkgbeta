@@ -56,7 +56,6 @@ class NoteBooksController extends Controller
         $data['bindings']           = Bindings::get()->pluck('name', 'id');
         $data['schools']            = Schools::get()->pluck('name', 'id');
         $data['series']             = Series::where('company_id',$company_id)->get()->pluck('name', 'id');
-        // $data['editions']       = edition::get()->pluck('name', 'id');
         $data['series']             = Series::where('company_id',$company_id)->get()->pluck('name', 'id');
         $data['categories']         = Categories::where('company_id',$company_id)->where('product_type_id',2)->get()->pluck('title', 'id');
         $data['subcategories']      = SubCategories::where('company_id',$company_id)->get()->pluck('name', 'id');
@@ -105,7 +104,6 @@ class NoteBooksController extends Controller
             'binding_id'            =>$request->binding_id,
             'school_id'             =>$request->school_id,
             'additional_topics'     =>$request->additional_topics,
-            'company_id'            => $user->company_id,
             'p_id' => $meta
   
          ]);

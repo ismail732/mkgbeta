@@ -63,7 +63,6 @@ class BooksController extends Controller
         $data['suppliers']           = Suppliers::where('company_id',$company_id)->get()->pluck('name', 'id');
         $data['bindings']           = Bindings::get()->pluck('name', 'id');
         $data['series']             = Series::where('company_id',$company_id)->get()->pluck('name', 'id');
-        // $data['editions']       = edition::get()->pluck('name', 'id');
         $data['series']             = Series::where('company_id',$company_id)->get()->pluck('name', 'id');
         $data['categories']         = Categories::where('company_id',$company_id)->where('product_type_id',1)->get()->pluck('title', 'id');
         $data['subcategories']       = SubCategories::where('company_id',$company_id)->get()->pluck('name', 'id');

@@ -41,6 +41,8 @@ class StationariesController extends Controller
         $company_id = $user->company_id;
         $data=array();
         $data['units']              = Units::get()->pluck('title', 'id');
+        $data['publishers']          = Publishers::where('company_id',$company_id)->get()->pluck('name', 'id');
+        $data['suppliers']           = Suppliers::where('company_id',$company_id)->get()->pluck('name', 'id');
         $data['categories']         = Categories::where('company_id',$company_id)->where('product_type_id',3)->get()->pluck('title', 'id');
         $data['subcategorie']       = SubCategories::where('company_id',$company_id)->get()->pluck('name', 'id');
 

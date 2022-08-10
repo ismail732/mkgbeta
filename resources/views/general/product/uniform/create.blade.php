@@ -196,15 +196,11 @@
                   <div class="mb-1">
                     
 
-                    <input list="Supplier" name="browser" placeholder="Supplier*" id="browser" class="form-control">
-
-                      <datalist id="Supplier">
-                        <option value="Edge">
-                        <option value="Firefox">
-                        <option value="Chrome">
-                        <option value="Opera">
-                        <option value="Safari">
-                      </datalist>
+                    <select class="select2 form-select" id="select2-Unit" name="supplier_id">
+                        @foreach($suppliers as $x => $val)
+                          <option value="{{$x}}">{{$val}}</option>
+                        @endforeach  
+                      </select>
                   </div>
                 </div>
                 

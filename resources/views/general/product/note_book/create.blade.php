@@ -229,10 +229,6 @@
                   </select>
                   </div>
                 </div>
-              
-
-                
-                
 
                 <div class="col-md-4 col-12">
                   <div class="mb-1">
@@ -251,11 +247,23 @@
                     </select>
                   </div>
                 </div>
+                <div class="col-md-4 col-12">
+                  <div class="mb-1">
+                    <select class="select2 form-select" id="select2-Unit" name="supplier_id">
+                      @foreach($suppliers as $x => $val)
+                        <option value="{{$x}}">{{$val}}</option>
+                      @endforeach  
+                    </select>
+                  </div>
+                </div>
 
                 <div class="col-md-4 col-12">
                   <div class="mb-1">
-                    <select class="select2 form-select" id="select2-Binding">
-                      <option value="">Binding*</option>
+                    <select class="select2 form-select" id="select2-Subject" name="binding_id">
+                      <option>Enter Bindings</option>
+                      <option value="binding_id">Soft Binding</option>
+                      <option value="binding_id">Hard Binding</option>
+                      <option value="binding_id">Spring Binding</option>
                     </select>
                   </div>
                 </div>

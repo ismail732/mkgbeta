@@ -50,6 +50,7 @@ class UniformController extends Controller
         $data=array();
         $data['units']              = Units::get()->pluck('title', 'id');
         $data['schools']            = Schools::get()->pluck('name', 'id');
+        $data['suppliers']           = Suppliers::where('company_id',$company_id)->get()->pluck('name', 'id');
         $data['categories']         = Categories::where('company_id',$company_id)->where('product_type_id',4)->get()->pluck('title', 'id');
         $data['subcategories']      = SubCategories::where('company_id',$company_id)->get()->pluck('name', 'id');
 

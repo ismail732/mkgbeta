@@ -197,8 +197,10 @@
                     <!-- <label class="form-label" for="city-column">Supplier</label> -->
                     
 
-                    <select class="select2 form-select" id="select2-Calculate">
-                      <option value="">Supplier</option>
+                    <select class="select2 form-select" id="select2-Unit" name="supplier_id">
+                      @foreach($suppliers as $x => $val)
+                        <option value="{{$x}}">{{$val}}</option>
+                      @endforeach  
                     </select>
 
                   </div>
@@ -218,18 +220,15 @@
                 
                 <div class="col-md-4 col-12">
                   <div class="mb-1">
-                    <!-- <label class="form-label" for="city-column">Supplier</label> -->
-                    
-
-                    <select class="select2 form-select" id="select2-Calculate">
-                      <option value="">Brand</option>
-                    </select>
-
+                  <input
+                      type="text"
+                      id="brand"
+                      class="form-control @error('brand') error @enderror"
+                      name="brand"
+                      placeholder="Brand"
+                    />
                   </div>
                 </div>
-
-
-            
 
                 <div class="col-12">
                   

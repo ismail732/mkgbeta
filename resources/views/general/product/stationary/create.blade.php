@@ -211,23 +211,31 @@
                 </div>
                 <div class="col-md-4 col-12">
                   <div class="mb-1">
-                    <select class="select2 form-select" id="select2-Supplier">
-                      <option value="">Supplier*</option>
+                    <select class="select2 form-select" id="select2-Unit" name="supplier_id">
+                      @foreach($suppliers as $x => $val)
+                        <option value="{{$x}}">{{$val}}</option>
+                      @endforeach  
                     </select>
                   </div>
                 </div>
                 <div class="col-md-4 col-12">
                   <div class="mb-1">
-                    <select class="select2 form-select" id="select2-Publisher">
-                      <option value="">Publisher*</option>
+                    <select class="select2 form-select" id="select2-Unit" name="publisher_id">
+                      @foreach($publishers as $x => $val)
+                        <option value="{{$x}}">{{$val}}</option>
+                      @endforeach  
                     </select>
                   </div>
                 </div>
                 <div class="col-md-4 col-12">
                   <div class="mb-1">
-                    <select class="select2 form-select" id="select2-Publisher">
-                      <option value="">Brand*</option>
-                    </select>
+                  <input
+                      type="text"
+                      id="brand"
+                      class="form-control @error('brand') error @enderror"
+                      name="brand"
+                      placeholder="Brand"
+                    />
                   </div>
                 </div>
                 <div class="col-12">

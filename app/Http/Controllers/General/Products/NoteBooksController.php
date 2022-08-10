@@ -51,6 +51,7 @@ class NoteBooksController extends Controller
         $data['topics']             = Topics::where('company_id',$company_id)->get()->pluck('name', 'id');
         $data['classes']            = Classes::get()->pluck('description', 'id');
         $data['languages']          = languages::get()->pluck('name', 'id');
+        $data['suppliers']           = Suppliers::where('company_id',$company_id)->get()->pluck('name', 'id');
         $data['subjects']           = Subjects::where('company_id',$company_id)->get()->pluck('name', 'id');
         $data['bindings']           = Bindings::get()->pluck('name', 'id');
         $data['schools']            = Schools::get()->pluck('name', 'id');
